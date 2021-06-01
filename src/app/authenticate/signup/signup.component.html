@@ -1,0 +1,31 @@
+<form (submit)="onSubmit($event)" class="ui form">
+  <p *ngIf="errorExists">Wrong Data, try again</p>
+  <div class="field">
+    <label>Username</label>
+    <input
+      (input)="onUserInput($event.target.value)"
+      type="text"
+      name="username"
+      placeholder="Username"
+    />
+  </div>
+  <div class="field">
+    <label>Email</label>
+    <input
+      (input)="onMailInput($event.target.value)"
+      type="email"
+      name="email"
+      placeholder="Password"
+    />
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <input
+      (input)="onPassInput($event.target.value)"
+      type="password"
+      name="password"
+      placeholder="Password"
+    />
+  </div>
+  <button class="ui green button" type="submit">Submit</button>
+</form>

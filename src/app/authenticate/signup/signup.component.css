@@ -1,0 +1,11 @@
+label {
+  color: white !important;
+  font-size: 1.15rem !important;
+}
+p {
+  color: rgb(255, 74, 74);
+}
+
+form {
+  width: 250px;
+}

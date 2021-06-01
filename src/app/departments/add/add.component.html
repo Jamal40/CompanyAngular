@@ -1,0 +1,21 @@
+<form (submit)="onSubmit($event)" class="ui form">
+  <div class="field">
+    <label>Department Name</label>
+    <input
+      (input)="onNameInput($event.target.value)"
+      type="text"
+      name="name"
+      placeholder="Department Name"
+    />
+  </div>
+  <div class="field">
+    <label>Location</label>
+    <input
+      (input)="onLocationInput($event.target.value)"
+      type="text"
+      name="loc"
+      placeholder="Location"
+    />
+  </div>
+  <button class="ui green button" type="submit">Submit</button>
+</form>

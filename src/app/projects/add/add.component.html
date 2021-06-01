@@ -1,0 +1,21 @@
+<form (submit)="onSubmit($event)" class="ui form">
+  <div class="field">
+    <label>Project Name</label>
+    <input
+      (input)="onNameInput($event.target.value)"
+      type="text"
+      name="name"
+      placeholder="Project Name"
+    />
+  </div>
+  <div class="field">
+    <label>Budget</label>
+    <input
+      (input)="onBudgetInput($event.target.value)"
+      type="number"
+      name="budget"
+      placeholder="Budget"
+    />
+  </div>
+  <button class="ui green button" type="submit">Submit</button>
+</form>

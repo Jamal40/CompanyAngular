@@ -1,0 +1,29 @@
+<button routerLink="/projects/add" class="ui green inverted button">
+  Add an new Work
+</button>
+<table class="ui inverted blue table">
+  <thead>
+    <tr>
+      <th>Employee Name</th>
+      <th>Project Name</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects">
+      <td>{{ project.projectName }}</td>
+      <td>{{ project.budget }}</td>
+      <td>
+        <a
+          [routerLink]="'/projects/edit/' + project.projectNo"
+          class="ui inverted button mini"
+          >Update</a
+        >
+        |
+        <a (click)="onDelete(project.projectNo)" class="ui inverted button mini"
+          >Delete</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>

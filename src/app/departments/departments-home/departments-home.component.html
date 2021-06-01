@@ -1,0 +1,29 @@
+<button routerLink="/departments/add" class="ui green inverted button">
+  Add an new Department
+</button>
+<table class="ui inverted blue table">
+  <thead>
+    <tr>
+      <th>Departmnet Name</th>
+      <th>Location</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dept of departments">
+      <td>{{ dept.deptName }}</td>
+      <td>{{ dept.location }}</td>
+      <td>
+        <a
+          [routerLink]="'/departments/edit/' + dept.deptNo"
+          class="ui inverted button mini"
+          >Update</a
+        >
+        |
+        <a (click)="onDelete(dept.deptNo)" class="ui inverted button mini"
+          >Delete</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,33 @@
+<button routerLink="/employees/add" class="ui green inverted button">
+  Add an new Employee
+</button>
+<table class="ui inverted blue table">
+  <thead>
+    <tr>
+      <th>Frst Name</th>
+      <th>Last Name</th>
+      <th>Salary</th>
+      <th>Department</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.fname }}</td>
+      <td>{{ emp.lname }}</td>
+      <td>{{ emp.salary }}</td>
+      <td>{{ emp.deptNo }}</td>
+      <td>
+        <a
+          [routerLink]="'/employees/edit/' + emp.empNo"
+          class="ui inverted button mini"
+          >Update</a
+        >
+        |
+        <a (click)="onDelete(emp.empNo)" class="ui inverted button mini"
+          >Delete</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
