@@ -1,4 +1,4 @@
-<!-- <button routerLink="/projects/add" class="ui green inverted button">
+<button routerLink="/works/add" class="ui green inverted button">
   Add an new Work
 </button>
 <table class="ui inverted blue table">
@@ -6,24 +6,31 @@
     <tr>
       <th>Employee Name</th>
       <th>Project Name</th>
+      <th>Job</th>
       <th>Date</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let project of projects">
-      <td>{{ project.projectName }}</td>
-      <td>{{ project.budget }}</td>
+    <tr *ngFor="let work of works">
+      <td>{{ work.employeeName }}</td>
+      <td>{{ work.projectName }}</td>
+      <td>{{ work.job }}</td>
+      <td>{{ work.enter_Date }}</td>
+
       <td>
         <a
-          [routerLink]="'/projects/edit/' + project.projectNo"
+          [routerLink]="'/works/edit/' + work.empNo + '/' + work.projectNo"
           class="ui inverted button mini"
           >Update</a
         >
         |
-        <a (click)="onDelete(project.projectNo)" class="ui inverted button mini"
+        <a
+          (click)="onDelete(work.empNo, work.projectNo)"
+          class="ui inverted button mini"
           >Delete</a
         >
       </td>
     </tr>
   </tbody>
-</table> -->
+</table>

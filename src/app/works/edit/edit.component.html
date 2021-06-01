@@ -1,1 +1,41 @@
-<p>edit works!</p>
+<form (submit)="onSubmit($event)" class="ui form">
+  <div class="field">
+    <label>Employee Name</label>
+    <select name="ename" [(ngModel)]="currentWork.empNo">
+      <option disabled selected value="-1">Employee</option>
+      <option value="{{ employee.empNo }}" *ngFor="let employee of employees">
+        {{ employee.fname }}
+      </option>
+    </select>
+  </div>
+  <div class="field">
+    <label>Project Name</label>
+    <select name="pname" [(ngModel)]="currentWork.projectNo">
+      <option disabled selected value="-1">Project</option>
+      <option value="{{ project.projectNo }}" *ngFor="let project of projects">
+        {{ project.projectName }}
+      </option>
+    </select>
+  </div>
+  <div class="field">
+    <label>Job</label>
+    <input
+      (input)="onJobInput($event.target.value)"
+      type="text"
+      name="job"
+      placeholder="Job"
+      [value]="currentWork.job"
+    />
+  </div>
+  <div class="field">
+    <label>Enter Date</label>
+    <input
+      (input)="onDateInput($event.target.value)"
+      type="date"
+      name="date"
+      placeholder="Date"
+      [value]="currentWork.enter_Date"
+    />
+  </div>
+  <button class="ui green button" type="submit">Submit</button>
+</form>

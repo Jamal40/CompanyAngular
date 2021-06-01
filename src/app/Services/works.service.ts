@@ -12,32 +12,35 @@ export class WorksService {
     return this.http.get('https://localhost:44396/api/works_on');
   }
 
-  public getWorkById(empNo, deptNo) {
+  public getWorkById(empNo, projectNo) {
     return this.http.get(
-      `https://localhost:44396/api/works_on/${empNo}/${deptNo}`
+      `https://localhost:44396/api/works_on/${empNo}/${projectNo}`
     );
   }
 
-  public addDepartment(deptName, location) {
+  public addWork(empNo, projectNo, job, enter_Date) {
     return this.http.post('https://localhost:44396/api/works_on', {
-      deptName: deptName,
-      location: location,
+      empNo: empNo,
+      projectNo: projectNo,
+      job: job,
+      enter_Date: enter_Date,
     });
   }
 
-  public editDepartment(empNo, deptNo, deptName, location) {
+  public editWork(empNo, projectNo, job, enter_Date) {
     return this.http.put(
-      `https://localhost:44396/api/works_on/${empNo}/${deptNo}`,
+      `https://localhost:44396/api/works_on/${empNo}/${projectNo}`,
       {
-        deptNo: deptNo,
-        deptName: deptName,
-        location: location,
+        empNo: empNo,
+        projectNo: projectNo,
+        job: job,
+        enter_Date: enter_Date,
       }
     );
   }
-  public deleteDepartment(empNo, deptNo) {
+  public deleteWork(empNo, projectNo) {
     return this.http.delete(
-      `https://localhost:44396/api/works_on/${empNo}/${deptNo}`
+      `https://localhost:44396/api/works_on/${empNo}/${projectNo}`
     );
   }
 }
